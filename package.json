@@ -1,0 +1,20 @@
+{
+  "author" : {
+    "name" : "Trevor Norris",
+    "email" : "trev.norris@gmail.com",
+    "url" : "http://trevorjnorris.com"
+  },
+  "name": "bench-timer",
+  "version": "0.1.0",
+  "description": "node benchmark api",
+  "engines": {
+    "node": ">=0.6.x"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "licenses" : [{
+    "type" : "MIT",
+    "url" : "http://opensource.org/licenses/MIT"
+  }],
+  "main": "./lib/bench-timer.js"
+}
