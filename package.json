@@ -8,7 +8,7 @@
   "version": "0.2.0",
   "description": "node benchmark api",
   "engines": {
-    "node": ">=0.6.x"
+    "node": ">=0.8.x"
   },
   "dependencies": {},
   "devDependencies": {},
