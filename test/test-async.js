@@ -1,4 +1,4 @@
-var timer = require('../bench-timer');
+var timer = require('../lib/bench-timer');
 
 var test0 = timer('test0');
 
