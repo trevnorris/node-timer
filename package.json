@@ -5,7 +5,7 @@
     "url" : "http://trevorjnorris.com"
   },
   "name": "bench-timer",
-  "version": "0.2.0",
+  "version": "0.2.0-1",
   "description": "node benchmark api",
   "engines": {
     "node": ">=0.8.x"
