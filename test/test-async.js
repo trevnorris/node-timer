@@ -10,6 +10,7 @@ var test3 = timer('test3', 1000, 5, true);
 // setup each test
 
 test0.onstart(function(delay) {
+  console.log('maxNameLength: %s', timer.maxNameLength());
   setTimeout(function() {
     test0.end();
   }, delay);
