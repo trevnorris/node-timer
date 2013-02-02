@@ -1,35 +1,62 @@
 var timer = require('../lib/bench-timer');
 
-var test0 = timer('test0');
+// create async tests
 
-test0.complete(function() {
+var test0 = timer('test0');
+var test1 = timer('test1', 1000);
+var test2 = timer('test2', 1000, 5);
+var test3 = timer('test3', 1000, 5, true);
+
+// setup each test
+
+test0.onstart(function(delay) {
+  setTimeout(function() {
+    test0.end();
+  }, delay);
+}, 1000);
+
+test0.onend(function() {
   console.log('test0', arguments);
+  test1.start();
+});
+
+test1.onstart(function(cntr) {
+  setInterval(function() {
+    if (--cntr < 0)
+      test1.end();
+  }, 500);
+}, 5);
+
+test1.onend(function() {
   test2.start();
 });
 
-test0.start();
-
-var test1 = timer('test1',1000,5);
-
-test1.complete(function() {
-  console.log('test1', arguments);
-  test0.end();
+test2.onend(function() {
+  console.log('test2', arguments);
 });
 
-test1.start();
-
-setInterval(function() {
-  test1.inc();
-}, 20);
-
-var test2 = timer('test2', 1000, 5, true);
-
-test2.start(function() {
+test2.onstart(function(arg) {
   setInterval(function() {
-    test2.inc();
+    test2.inc(arg);
+  }, 1);
+}, 1e4);
+
+test2.onend(function() {
+  console.log('test2', arguments);
+  test3.start();
+});
+
+test3.onstart(function() {
+  setInterval(function() {
+    for (var i = 0; i < 1e6; i++)
+      test3.inc();
   }, 10);
 });
 
-test2.complete(function() {
-  console.log('test2', arguments);
+test3.onend(function() {
+  console.log('test3', arguments);
 });
+
+// start test cycle
+
+test0.start();
