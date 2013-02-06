@@ -1,5 +1,5 @@
-var timer = require('../lib/bench-timer');
-var params = timer.parse(process.argv);
+var Timer = require('../lib/bench-timer');
+var params = Timer.parse(process.argv);
 var iter = params.iter || 1e8;
 var obj = { noop: noop };
 var mnl;
@@ -14,8 +14,8 @@ function oe(name, time) {
               (iter / micros).toFixed(2));
 }
 
-var aN = timer('asyncNoop');
-var aNT = timer('asyncNoopTracker').onend(oe);
+var aN = Timer('asyncNoop');
+var aNT = Timer('asyncNoopTracker').onend(oe);
 aN.noop();
 setTimeout(function() {
   aNT.start();
@@ -26,14 +26,14 @@ setTimeout(function() {
   aNT.end();
 }, 15);
 
-var eF = timer('emptyFor').onend(oe);
+var eF = Timer('emptyFor').onend(oe);
 setTimeout(function() {
   eF.start();
   for (var i = 0; i < iter; i++);
   eF.end();
 }, 15);
 
-var eN = timer('emptyNoop').onend(oe);
+var eN = Timer('emptyNoop').onend(oe);
 setTimeout(function() {
   eN.start();
   for (var i = 0; i < iter; i++)
@@ -41,7 +41,7 @@ setTimeout(function() {
   eN.end();
 }, 15);
 
-var eNO = timer('emptyNoopObj').onend(oe);
+var eNO = Timer('emptyNoopObj').onend(oe);
 setTimeout(function() {
   eNO.start();
   for (var i = 0; i < iter; i++)
@@ -49,13 +49,13 @@ setTimeout(function() {
   eNO.end();
 }, 15);
 
-var eA = timer('emptyAsync').onend(oe);
+var eA = Timer('emptyAsync').onend(oe);
 setTimeout(function() {
   eA.start();
   eA.end();
 }, 15);
 
-mnl = timer.maxNameLength();
+mnl = Timer.maxNameLength();
 
 function fmtName(name) {
   name += ': ';

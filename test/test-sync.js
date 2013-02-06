@@ -1,11 +1,11 @@
-var timer = require('../lib/bench-timer');
+var Timer = require('../lib/bench-timer');
 var assert = require('assert');
 
-timer('sync0', function() { });
+Timer('sync0', function() { });
 
-timer('sync1', function() { });
+Timer('sync1', function() { });
 
-timer('syncComplete', function() { })
+Timer('syncComplete', function() { })
   .oncomplete(function(name, time, args) {
     assert.ok(typeof name === 'string');
     assert.ok(Array.isArray(time));

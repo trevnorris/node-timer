@@ -5,8 +5,8 @@
  */
 
 var assert = require('assert');
-var timer = require('../lib/bench-timer');
-var params = timer.parse(process.argv);
+var Timer = require('../lib/bench-timer');
+var params = Timer.parse(process.argv);
 var expected = {
                 hex: 15,
                 float: 1000,

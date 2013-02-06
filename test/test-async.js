@@ -1,16 +1,16 @@
-var timer = require('../lib/bench-timer');
+var Timer = require('../lib/bench-timer');
 
 // create async tests
 
-var test0 = timer('test0');
-var test1 = timer('test1', 1000);
-var test2 = timer('test2', 1000, 5);
-var test3 = timer('test3', 1000, 5, true);
+var test0 = Timer('test0');
+var test1 = Timer('test1', 1000);
+var test2 = Timer('test2', 1000, 5);
+var test3 = Timer('test3', 1000, 5, true);
 
 // setup each test
 
 test0.onstart(function(delay) {
-  console.log('maxNameLength: %s', timer.maxNameLength());
+  console.log('maxNameLength: %s', Timer.maxNameLength());
   setTimeout(function() {
     test0.end();
   }, delay);

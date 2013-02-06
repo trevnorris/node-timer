@@ -1,6 +1,6 @@
-var timer = require('../lib/bench-timer');
+var Timer = require('../lib/bench-timer');
 
-timer('correctArgs', function() {
+Timer('correctArgs', function() {
   var args = [1,2,3];
   for (var i = 0; i < 1e8; i++) {
     testCall(args[0], args[1], args[2]);
@@ -8,7 +8,7 @@ timer('correctArgs', function() {
 });
 
 
-timer('incorrectArgs', function() {
+Timer('incorrectArgs', function() {
   var args = [1,2,3];
   for (var i = 0; i < 1e8; i++) {
     testCall(args[0], args[1], args[2], args[3], args[4], args[5]);

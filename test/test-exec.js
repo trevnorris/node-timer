@@ -4,15 +4,15 @@
  *
  */
 
-var timer = require('../lib/bench-timer');
-var params = timer.parse(process.argv);
+var Timer = require('../lib/bench-timer');
+var params = Timer.parse(process.argv);
 
 function fn() { }
 
-timer('test0', fn).oncomplete(function(name) {
+Timer('test0', fn).oncomplete(function(name) {
   console.log(name + ' complete');
 });
 
-timer('test1', fn).oncomplete(function(name) {
+Timer('test1', fn).oncomplete(function(name) {
   console.log(name + ' complete');
 });
