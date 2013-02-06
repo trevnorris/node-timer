@@ -1,6 +1,6 @@
 /* Run test with the following:
  *
- * --octal 456 --float 1e3 --decimal 1.3 --dual 1 2 --bool
+ * --hex 0xf --float 1e3 --decimal 1.3 --dual a 2 --bool
  *
  */
 
@@ -8,10 +8,10 @@ var assert = require('assert');
 var timer = require('../lib/bench-timer');
 var params = timer.parse(process.argv);
 var expected = {
-                octal: 456,
-                float: 1e3,
+                hex: 15,
+                float: 1000,
                 decimal: 1.3,
-                dual: [1, 2],
+                dual: ['a', 2],
                 bool: true
                };
 

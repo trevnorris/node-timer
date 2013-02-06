@@ -6,8 +6,13 @@
 
 var timer = require('../lib/bench-timer');
 var params = timer.parse(process.argv);
-var fn = function() { };
 
-timer('test0', fn).oncomplete(fn);
+function fn() { }
 
-timer('test1', fn).oncomplete(fn);
+timer('test0', fn).oncomplete(function(name) {
+  console.log(name + ' complete');
+});
+
+timer('test1', fn).oncomplete(function(name) {
+  console.log(name + ' complete');
+});
