@@ -20,3 +20,8 @@ Docs
 
 Documentation can be [found on the
 wiki](https://github.com/trevnorris/node-timer/wiki/Docs)
+
+Suit
+----
+
+The `suit/` directory has a set of tests created as I've been testing node.
