@@ -9,7 +9,7 @@
  */
 
 var oc = require('../templates/_buffer').oncomplete;
-var Timer = require('bench-timer');
+var Timer = require('../../lib/node-timer');
 var params = Timer.parse(process.argv);
 var ITER = params.iter || 1e6;
 var SlowBuffer = require('buffer').SlowBuffer;

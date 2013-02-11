@@ -20,7 +20,7 @@
 
 
 var net = require('net');
-var Timer = require('bench-timer');
+var Timer = require('../../lib/node-timer');
 var params = Timer.parse(process.argv);
 var t_cb = require('../templates/_net')[params.make ? 'make' : 'cli'];
 var tcp_net2 = Timer('tcp-net2-pipe',

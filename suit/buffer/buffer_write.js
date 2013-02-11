@@ -19,7 +19,7 @@ const UINT32 = INT32 * 2;
 
 
 var oc = require('../templates/_buffer').oncomplete;
-var Timer = require('bench-timer');
+var Timer = require('../../lib/node-timer');
 var params = Timer.parse(process.argv);
 var Buff = params.slow ? require('buffer').SlowBuffer : Buffer;
 var noAssert = !!params.noassert;

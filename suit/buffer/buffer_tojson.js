@@ -10,7 +10,7 @@
  */
 
 var oc = require('../templates/_buffer').oncomplete;
-var Timer = require('bench-timer');
+var Timer = require('../../lib/node-timer');
 var params = Timer.parse(process.argv);
 var Buff = params.slow ? require('buffer').SlowBuffer : Buffer;
 var ITER = params.iter || 1e5;

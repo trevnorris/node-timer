@@ -21,7 +21,7 @@
  */
 
 var TCP = process.binding('tcp_wrap').TCP;
-var Timer = require('bench-timer');
+var Timer = require('../../lib/node-timer');
 var params = Timer.parse(process.argv);
 var t_cb = require('../templates/_net')[params.make ? 'make' : 'cli'];
 var tcp_raw = Timer('tcp-raw-pipe',
