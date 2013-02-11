@@ -1,4 +1,4 @@
-var Timer = require('../lib/bench-timer');
+var Timer = require('../lib/node-timer');
 
 // create async tests
 

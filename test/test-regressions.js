@@ -1,17 +1,8 @@
-var Timer = require('../lib/bench-timer');
-var params = Timer.parse(process.argv);
-var iter = params.iter || 1e6;
-var offset = params.offset || 1e5;
+var arr = [1, 2];
+var obj = { fn: function extern(arg0, arg1) { return arg0 + arg1; }}
 
-
-Timer('regression0', function regression0() {
-  var arr = [1];
-  for (var i = 0; i < iter; i++) {
-    simpleExternal(arr[0]);
-    if (i % offset === 0)
-      simpleExternal(arr[0], arr[1]);
-  }
-});
-
-
-function simpleExternal(arg0) { }
+for (var i = 0; i < 1e8; i++) {
+  obj.fn(arr[0], arr[1]);
+  if (i % 1e6 === 0)
+    obj.fn(arr[0], arr[1], arr[2]);
+}

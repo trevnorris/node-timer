@@ -1,4 +1,4 @@
-var Timer = require('../lib/bench-timer');
+var Timer = require('../lib/node-timer');
 
 Timer('correctArgs', function() {
   var args = [1,2,3];

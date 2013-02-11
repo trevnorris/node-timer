@@ -1,4 +1,4 @@
-bench-timer
+node-timer
 ===========
 
 ### Create benchmarks for node
@@ -12,11 +12,11 @@ Installation
 Install with `npm`:
 
 ``` bash
-$ npm install bench-timer
+$ npm install node-timer
 ```
 
 Docs
 ----
 
 Documentation can be [found on the
-wiki](https://github.com/trevnorris/bench-timer/wiki/Docs)
+wiki](https://github.com/trevnorris/node-timer/wiki/Docs)

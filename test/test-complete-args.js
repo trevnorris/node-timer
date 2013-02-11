@@ -1,5 +1,5 @@
 var assert = require('assert');
-var Timer = require('../lib/bench-timer');
+var Timer = require('../lib/node-timer');
 
 console.log('test passing arguments to complete');
 

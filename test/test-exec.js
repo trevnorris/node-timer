@@ -4,7 +4,7 @@
  *
  */
 
-var Timer = require('../lib/bench-timer');
+var Timer = require('../lib/node-timer');
 var params = Timer.parse(process.argv);
 
 function fn() { }
